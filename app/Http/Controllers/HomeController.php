@@ -65,6 +65,11 @@ class HomeController extends Controller
         return view('rentals.index', compact('rentals'));
     }
 
+    public function showRental(Rental $rental)
+    {
+        return view('rentals.show', compact('rental'));
+    }
+
     public function index()
     {
         return view('dashboard');

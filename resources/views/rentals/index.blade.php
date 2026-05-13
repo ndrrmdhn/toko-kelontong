@@ -72,7 +72,7 @@
                             @endif
                         </div>
                         <div class="card-footer border-top-0 bg-white">
-                            <a href="https://wa.me/{{ config('settings.whatsapp', '') }}?text=Halo, saya tertarik dengan kontrakan {{ $rental->name }}"
+                            <a href="{{ whatsapp_link('Halo, saya ingin menanyakan kontrakan: ' . $rental->name) }}"
                                 target="_blank" class="btn btn-warning btn-sm w-100">
                                 <i class="bi bi-whatsapp"></i> Tanya Info
                             </a>

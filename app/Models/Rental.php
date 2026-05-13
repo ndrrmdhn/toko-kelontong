@@ -23,4 +23,29 @@ class Rental extends Model
         'facilities' => 'array',
         'images' => 'array',
     ];
+
+    public function scopeAvailable($query)
+    {
+        return $query->where('status', 'available');
+    }
+
+    public function scopeRented($query)
+    {
+        return $query->where('status', 'rented');
+    }
+
+    public function getMainImageAttribute()
+    {
+        return $this->images ? $this->images[0] : null;
+    }
+
+    public function getFormattedPriceMonthlyAttribute()
+    {
+        return $this->price_monthly ? 'Rp ' . number_format($this->price_monthly, 0, ',', '.') : '-';
+    }
+
+    public function getFormattedPriceYearlyAttribute()
+    {
+        return $this->price_yearly ? 'Rp ' . number_format($this->price_yearly, 0, ',', '.') : '-';
+    }
 }
