@@ -106,7 +106,7 @@
                                     </td>
                                     <td class="text-center">
                                         <a href="{{ route('admin.products.edit', $product) }}"
-                                            class="btn btn-sm btn-outline-primary mb-1">
+                                            class="btn btn-sm btn-outline-success mb-1">
                                             <i class="bi bi-pencil"></i> Edit
                                         </a>
                                         <form method="POST" action="{{ route('admin.products.destroy', $product) }}"
@@ -172,7 +172,7 @@
                                         </div>
                                         <div class="d-flex mt-3 gap-2">
                                             <a href="{{ route('admin.products.edit', $product) }}"
-                                                class="btn btn-sm btn-outline-primary flex-fill">Edit</a>
+                                                class="btn btn-sm btn-outline-success flex-fill">Edit</a>
                                             <form method="POST" action="{{ route('admin.products.destroy', $product) }}"
                                                 class="flex-fill"
                                                 onsubmit="return confirm('Yakin ingin menghapus produk ini?');">

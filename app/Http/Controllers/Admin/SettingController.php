@@ -94,6 +94,6 @@ class SettingController extends Controller
         }
 
         return redirect()->route('admin.settings.index')
-            ->with('success', '✅ Pengaturan website berhasil disimpan!');
+            ->with('success', 'Pengaturan website berhasil disimpan!');
     }
 }

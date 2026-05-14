@@ -120,7 +120,7 @@
                                     </td>
                                     <td class="text-center">
                                         <a href="{{ route('admin.rentals.edit', $rental) }}"
-                                            class="btn btn-sm btn-outline-primary mb-1">
+                                            class="btn btn-sm btn-outline-success mb-1">
                                             <i class="bi bi-pencil"></i> Edit
                                         </a>
                                         <form method="POST" action="{{ route('admin.rentals.destroy', $rental) }}"

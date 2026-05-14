@@ -76,7 +76,7 @@
                                         </td>
                                         <td class="text-center">
                                             <a href="{{ route('admin.categories.edit', $category) }}"
-                                                class="btn btn-sm btn-outline-primary" title="Edit">
+                                                class="btn btn-sm btn-outline-success" title="Edit">
                                                 <i class="bi bi-pencil"></i> Edit
                                             </a>
                                             <form method="POST" action="{{ route('admin.categories.destroy', $category) }}"

@@ -80,7 +80,7 @@ class RentalController extends Controller
         Rental::create($data);
 
         return redirect()->route('admin.rentals.index')
-            ->with('success', '✅ Kontrakan berhasil ditambahkan!');
+            ->with('success', 'Kontrakan berhasil ditambahkan!');
     }
 
     public function edit(Rental $rental)
@@ -130,7 +130,7 @@ class RentalController extends Controller
         $rental->update($data);
 
         return redirect()->route('admin.rentals.index')
-            ->with('success', '✅ Kontrakan berhasil diperbarui!');
+            ->with('success', 'Kontrakan berhasil diperbarui!');
     }
 
     public function destroy(Rental $rental)
@@ -144,6 +144,6 @@ class RentalController extends Controller
         $rental->delete();
 
         return redirect()->route('admin.rentals.index')
-            ->with('success', '✅ Kontrakan berhasil dihapus!');
+            ->with('success', 'Kontrakan berhasil dihapus!');
     }
 }

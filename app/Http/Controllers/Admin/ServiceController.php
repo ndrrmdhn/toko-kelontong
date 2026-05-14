@@ -52,7 +52,7 @@ class ServiceController extends Controller
         Service::create($data);
 
         return redirect()->route('admin.services.index')
-            ->with('success', '✅ Layanan berhasil ditambahkan!');
+            ->with('success', 'Layanan berhasil ditambahkan!');
     }
 
     public function edit(Service $service)
@@ -81,7 +81,7 @@ class ServiceController extends Controller
         $service->update($data);
 
         return redirect()->route('admin.services.index')
-            ->with('success', '✅ Layanan berhasil diperbarui!');
+            ->with('success', 'Layanan berhasil diperbarui!');
     }
 
     public function destroy(Service $service)
@@ -89,6 +89,6 @@ class ServiceController extends Controller
         $service->delete();
 
         return redirect()->route('admin.services.index')
-            ->with('success', '✅ Layanan berhasil dihapus!');
+            ->with('success', 'Layanan berhasil dihapus!');
     }
 }

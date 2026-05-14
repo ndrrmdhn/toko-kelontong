@@ -57,7 +57,7 @@ class CategoryController extends Controller
         Category::create($validated);
 
         return redirect()->route('admin.categories.index')
-            ->with('success', '✅ Kategori berhasil ditambahkan!');
+            ->with('success', 'Kategori berhasil ditambahkan!');
     }
 
     public function edit(Category $category)
@@ -82,7 +82,7 @@ class CategoryController extends Controller
         $category->update($validated);
 
         return redirect()->route('admin.categories.index')
-            ->with('success', '✅ Kategori berhasil diperbarui!');
+            ->with('success', 'Kategori berhasil diperbarui!');
     }
 
     public function destroy(Category $category)
@@ -90,6 +90,6 @@ class CategoryController extends Controller
         $category->delete();
 
         return redirect()->route('admin.categories.index')
-            ->with('success', '✅ Kategori berhasil dihapus!');
+            ->with('success', 'Kategori berhasil dihapus!');
     }
 }

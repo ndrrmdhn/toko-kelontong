@@ -172,8 +172,7 @@
                                 </div>
                                 <div>
                                     <h6 class="fw-semibold mb-1">Layanan Lengkap</h6>
-                                    <p class="text-muted small mb-0">Produk, kontrakan, dan info bisnis dalam satu website
-                                        yang rapi.</p>
+                                    <p class="text-muted small mb-0">Belanja praktis, bisa pesan antar dan infromasi kontrakan.</p>
                                 </div>
                             </div>
                             <div class="d-flex align-items-start gap-3">
@@ -182,8 +181,7 @@
                                 </div>
                                 <div>
                                     <h6 class="fw-semibold mb-1">Cepat dan Responsif</h6>
-                                    <p class="text-muted small mb-0">Desain mobile-first yang mendukung pelanggan di semua
-                                        perangkat.</p>
+                                    <p class="text-muted small mb-0">Desain ringan dan user-friendly.</p>
                                 </div>
                             </div>
                             <div class="d-flex align-items-start gap-3">
@@ -266,8 +264,7 @@
                         <div class="d-flex flex-column flex-md-row justify-content-between align-items-start mb-4 gap-3">
                             <div>
                                 <h3 class="fw-bold mb-2">Lokasi Usaha</h3>
-                                <p class="text-muted mb-0">Lihat lokasi bisnis Anda secara langsung dengan peta yang
-                                    ditampilkan dari pengaturan website.</p>
+                                <p class="text-muted mb-0">Lihat lokasi toko secara langsung dengan Google Maps.</p>
                             </div>
                             <div class="text-md-end">
                                 <span class="badge badge-modern bg-secondary mb-2 text-white">Alamat</span>
@@ -304,7 +301,7 @@
                             <div class="card-body d-flex flex-column p-4">
                                 @if ($service->icon)
                                     <div class="mb-3">
-                                        <i class="bi {{ $service->icon }} fs-1 text-primary"></i>
+                                        <i class="bi {{ $service->icon }} fs-1 text-success"></i>
                                     </div>
                                 @endif
                                 <h5 class="card-title fw-semibold mb-3">{{ $service->name }}</h5>

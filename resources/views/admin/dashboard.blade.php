@@ -86,13 +86,13 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-6 col-lg-3 mb-2">
-                            <a href="{{ route('admin.categories.create') }}" class="btn btn-outline-primary w-100">
-                                <span><i class="bi bi-plus-circle"></i> Tambah Kategori</span>
+                            <a href="{{ route('admin.products.create') }}" class="btn btn-outline-primary w-100">
+                                <span><i class="bi bi-plus-circle"></i> Tambah Produk</span>
                             </a>
                         </div>
                         <div class="col-md-6 col-lg-3 mb-2">
-                            <a href="{{ route('admin.products.create') }}" class="btn btn-outline-success w-100">
-                                <span><i class="bi bi-plus-circle"></i> Tambah Produk</span>
+                            <a href="{{ route('admin.categories.create') }}" class="btn btn-outline-success w-100">
+                                <span><i class="bi bi-plus-circle"></i> Tambah Kategori</span>
                             </a>
                         </div>
                         <div class="col-md-6 col-lg-3 mb-2">

@@ -23,7 +23,7 @@
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-start mb-3">
                                 <div>
-                                    <i class="bi {{ $service->icon }}" style="font-size: 2rem; color: #0d6efd;"></i>
+                                    <i class="bi {{ $service->icon }}" style="font-size: 2rem; color: #00b140;"></i>
                                 </div>
                                 <div>
                                     @if ($service->is_active)
@@ -40,7 +40,7 @@
                         <div class="card-footer border-top bg-white">
                             <div class="d-grid gap-2">
                                 <a href="{{ route('admin.services.edit', $service) }}"
-                                    class="btn btn-sm btn-outline-primary">
+                                    class="btn btn-sm btn-outline-success w-100 mb-1">
                                     <i class="bi bi-pencil"></i> Edit
                                 </a>
                                 <form method="POST" action="{{ route('admin.services.destroy', $service) }}"

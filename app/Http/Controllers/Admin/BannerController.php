@@ -60,7 +60,7 @@ class BannerController extends Controller
         Banner::create($data);
 
         return redirect()->route('admin.banners.index')
-            ->with('success', '✅ Banner berhasil ditambahkan!');
+            ->with('success', 'Banner berhasil ditambahkan!');
     }
 
     public function edit(Banner $banner)
@@ -99,7 +99,7 @@ class BannerController extends Controller
         $banner->update($data);
 
         return redirect()->route('admin.banners.index')
-            ->with('success', '✅ Banner berhasil diperbarui!');
+            ->with('success', 'Banner berhasil diperbarui!');
     }
 
     public function destroy(Banner $banner)
@@ -111,6 +111,6 @@ class BannerController extends Controller
         $banner->delete();
 
         return redirect()->route('admin.banners.index')
-            ->with('success', '✅ Banner berhasil dihapus!');
+            ->with('success', 'Banner berhasil dihapus!');
     }
 }

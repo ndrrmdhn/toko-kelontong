@@ -70,7 +70,7 @@
                                     </td>
                                     <td class="text-center">
                                         <a href="{{ route('admin.banners.edit', $banner) }}"
-                                            class="btn btn-sm btn-outline-primary mb-1">
+                                            class="btn btn-sm btn-outline-success mb-1">
                                             <i class="bi bi-pencil"></i> Edit
                                         </a>
                                         <form method="POST" action="{{ route('admin.banners.destroy', $banner) }}"
@@ -136,7 +136,7 @@
                                             </div>
                                             <div>
                                                 <a href="{{ route('admin.banners.edit', $banner) }}"
-                                                    class="btn btn-sm btn-outline-primary me-1">Edit</a>
+                                                    class="btn btn-sm btn-outline-success me-1">Edit</a>
                                                 <form method="POST" action="{{ route('admin.banners.destroy', $banner) }}"
                                                     style="display: inline;"
                                                     onsubmit="return confirm('Yakin ingin menghapus banner ini?');">

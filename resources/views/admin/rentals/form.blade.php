@@ -65,8 +65,8 @@
                             @endforeach
                         @endif
                     </div>
-                    <button type="button" id="add-facility" class="btn btn-outline-primary btn-sm">
-                        <span>➕ Tambah Fasilitas</span>
+                    <button type="button" id="add-facility" class="btn btn-outline-success btn-sm">
+                        <span><i class="bi bi-plus-circle"></i> Tambah Fasilitas</span>
                     </button>
                     <div class="form-text">Tambahkan fasilitas yang tersedia di kontrakan ini.</div>
                 </div>
