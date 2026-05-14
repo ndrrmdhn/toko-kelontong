@@ -12,9 +12,10 @@
                     <div class="card h-100 border-0 shadow-sm">
                         @php
                             $images = is_array($rental->images) ? $rental->images : json_decode($rental->images, true);
+                            $imageUrl = $images && count($images) ? image_url($images[0]) : null;
                         @endphp
-                        @if ($images && count($images) > 0)
-                            <img src="{{ asset('storage/' . $images[0]) }}" class="card-img-top" alt="{{ $rental->name }}"
+                        @if ($imageUrl)
+                            <img src="{{ $imageUrl }}" class="card-img-top" alt="{{ $rental->name }}" loading="lazy"
                                 style="height: 250px; object-fit: cover;">
                         @else
                             <div class="bg-secondary"

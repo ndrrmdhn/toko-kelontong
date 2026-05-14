@@ -67,9 +67,10 @@
                             @foreach ($rentals as $rental)
                                 <tr>
                                     <td>
-                                        @if ($image = $rental->main_image)
-                                            <img src="{{ asset('storage/' . $image) }}" alt="{{ $rental->name }}"
-                                                class="rounded" style="width: 60px; height: 60px; object-fit: cover;">
+                                        @php $imageUrl = $rental->main_image ? image_url($rental->main_image) : null; @endphp
+                                        @if ($imageUrl)
+                                            <img src="{{ $imageUrl }}" alt="{{ $rental->name }}" class="rounded"
+                                                style="width: 60px; height: 60px; object-fit: cover;">
                                         @else
                                             <div class="bg-light d-flex align-items-center justify-content-center rounded"
                                                 style="width: 60px; height: 60px;">
@@ -157,9 +158,10 @@
                         <div class="card border-0 shadow-sm">
                             <div class="row g-0 align-items-center">
                                 <div class="col-4">
-                                    @if ($image = $rental->main_image)
-                                        <img src="{{ asset('storage/' . $image) }}" alt="{{ $rental->name }}"
-                                            class="img-fluid rounded-start w-100 h-100"
+                                    @php $imageUrl = $rental->main_image ? image_url($rental->main_image) : null; @endphp
+                                    @if ($imageUrl)
+                                        <img src="{{ $imageUrl }}" alt="{{ $rental->name }}"
+                                            class="img-fluid rounded-start w-100 h-100" loading="lazy"
                                             style="object-fit: cover; min-height: 140px;">
                                     @else
                                         <div class="bg-light d-flex align-items-center justify-content-center rounded"

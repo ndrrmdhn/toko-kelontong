@@ -17,8 +17,8 @@
                 👤
             </button>
             <ul class="dropdown-menu dropdown-menu-end">
-                <li><a class="dropdown-item" href="#">Profile</a></li>
-                <li><a class="dropdown-item" href="#">Pengaturan</a></li>
+                <li><a class="dropdown-item" href="/profile">Profile</a></li>
+                <li><a class="dropdown-item" href="/admin/settings">Pengaturan</a></li>
                 <li>
                     <hr class="dropdown-divider">
                 </li>

@@ -55,9 +55,9 @@
                                 @foreach ($categories as $category)
                                     <tr>
                                         <td>
-                                            @if ($category->image)
-                                                <img src="{{ asset('storage/' . $category->image) }}"
-                                                    alt="{{ $category->name }}"
+                                            @php $categoryImage = image_url($category->image); @endphp
+                                            @if ($categoryImage)
+                                                <img src="{{ $categoryImage }}" alt="{{ $category->name }}"
                                                     style="width: 50px; height: 50px; object-fit: cover; border-radius: 0.5rem;">
                                             @else
                                                 <div

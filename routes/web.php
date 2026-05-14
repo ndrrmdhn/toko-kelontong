@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\RentalController;
 use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\SettingController;
+use App\Http\Controllers\ProfileController;
 
 // Frontend Routes
 Route::get('/', [HomeController::class, 'landing'])->name('landing');
@@ -35,8 +36,15 @@ Route::middleware(['auth', 'role:super_admin,admin_toko,admin_kontrakan,kasir'])
 
     // Super Admin Only
     Route::middleware('role:super_admin')->group(function () {
-        Route::resource('settings', SettingController::class)->only(['index', 'update']);
+        Route::get('/settings', [SettingController::class, 'index'])->name('settings.index');
+        Route::post('/settings', [SettingController::class, 'update'])->name('settings.update');
     });
+});
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::put('/profile/password', [ProfileController::class, 'updatePassword'])->name('profile.password.update');
 });
 
 Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');

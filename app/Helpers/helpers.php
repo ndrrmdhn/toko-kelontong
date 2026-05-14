@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Storage;
 if (! function_exists('whatsapp_number')) {
     function whatsapp_number(): string
     {
-        return config('settings.whatsapp', env('WHATSAPP_NUMBER', ''));
+        return setting('whatsapp', config('settings.whatsapp', env('WHATSAPP_NUMBER', '')));
     }
 }
 
@@ -45,5 +45,14 @@ if (! function_exists('image_url')) {
         }
 
         return null;
+    }
+}
+
+if (! function_exists('setting')) {
+    function setting(string $key, $default = null)
+    {
+        return cache()->remember('setting:' . $key, 3600, function () use ($key, $default) {
+            return \App\Models\Setting::get($key, $default);
+        });
     }
 }

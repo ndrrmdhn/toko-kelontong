@@ -89,9 +89,17 @@
                     <div id="image-preview" class="mt-3">
                         @if (isset($rental) && $rental->images)
                             @foreach ($rental->images as $image)
+                                @php $previewUrl = image_url($image); @endphp
                                 <div class="d-inline-block position-relative mb-2 me-2">
-                                    <img src="{{ asset('storage/' . $image) }}" alt="Existing image" class="rounded"
-                                        style="width: 100px; height: 100px; object-fit: cover;">
+                                    @if ($previewUrl)
+                                        <img src="{{ $previewUrl }}" alt="Existing image" class="rounded"
+                                            style="width: 100px; height: 100px; object-fit: cover;">
+                                    @else
+                                        <div class="bg-light rounded"
+                                            style="width: 100px; height: 100px; display:flex; align-items:center; justify-content:center;">
+                                            <small class="text-muted">No Image</small>
+                                        </div>
+                                    @endif
                                     <span class="badge bg-secondary position-absolute end-0 top-0">Existing</span>
                                 </div>
                             @endforeach

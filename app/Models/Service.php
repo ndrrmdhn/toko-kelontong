@@ -8,12 +8,17 @@ class Service extends Model
 {
     protected $fillable = [
         'name',
-        'description',
         'icon',
-        'is_active'
+        'description',
+        'is_active',
     ];
 
     protected $casts = [
         'is_active' => 'boolean',
     ];
+
+    public function scopeActive($query)
+    {
+        return $query->where('is_active', true);
+    }
 }

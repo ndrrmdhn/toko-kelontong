@@ -18,14 +18,24 @@ class HomeController extends Controller
 
     public function landing()
     {
-        $banners = Banner::where('is_active', true)->get();
-        $categories = Category::all();
-        $featured_products = Product::with('category')->where('active', true)->latest()->limit(4)->get();
-        $latest_products = Product::with('category')->where('active', true)->latest()->skip(4)->limit(8)->get();
-        $rentals = Rental::where('status', 'available')->limit(6)->get();
-        $services = Service::where('is_active', true)->get();
+        $banners = Banner::active()->select(['id', 'title', 'description', 'image', 'button_text', 'button_link'])->get();
+        $featured_products = Product::with('category:id,name')
+            ->where('active', true)
+            ->select(['id', 'category_id', 'name', 'image', 'price', 'stock', 'description'])
+            ->latest()
+            ->limit(4)
+            ->get();
+        $latest_products = Product::with('category:id,name')
+            ->where('active', true)
+            ->select(['id', 'category_id', 'name', 'image', 'price', 'stock', 'description'])
+            ->latest()
+            ->skip(4)
+            ->limit(8)
+            ->get();
+        $rentals = Rental::available()->select(['id', 'name', 'description', 'price_monthly', 'price_yearly', 'status', 'images'])->limit(6)->get();
+        $services = Service::where('is_active', true)->select(['id', 'name', 'description', 'icon'])->get();
 
-        return view('landing', compact('banners', 'categories', 'featured_products', 'latest_products', 'rentals', 'services'));
+        return view('landing', compact('banners', 'featured_products', 'latest_products', 'rentals', 'services'));
     }
 
     public function products()

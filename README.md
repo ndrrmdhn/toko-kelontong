@@ -56,3 +56,16 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Deployment
+
+- Set `APP_ENV=production` and `APP_DEBUG=false` in `.env` for live hosting.
+- Ensure `APP_URL` is set to your production URL.
+- Run `php artisan key:generate` if the app key is not set.
+- Create the storage symlink with `php artisan storage:link`.
+- Clear caches before deployment:
+  - `php artisan config:cache`
+  - `php artisan route:cache`
+  - `php artisan view:cache`
+- Keep `storage` and `bootstrap/cache` writeable on shared hosting.
+- Use `FILESYSTEM_DISK=public` or ensure `public/storage` is available for uploaded images.
