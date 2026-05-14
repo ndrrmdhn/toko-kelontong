@@ -10,7 +10,7 @@
         </div>
         <div class="col-md-4 text-md-end">
             <a href="{{ route('admin.products.create') }}" class="btn btn-success">
-                <span>➕ Tambah Produk</span>
+                <span><i class="bi bi-plus-circle"></i> Tambah Produk</span>
             </a>
         </div>
     </div>
@@ -37,7 +37,7 @@
                         </div>
 
                         <div class="col-sm-2 col-lg-3 d-grid gap-2">
-                            <button type="submit" class="btn btn-primary">🔍 Cari</button>
+                            <button type="submit" class="btn btn-primary"><i class="bi bi-search"></i> Cari</button>
                             @if ($search || $categoryId)
                                 <a href="{{ route('admin.products.index') }}" class="btn btn-outline-secondary">↻ Reset</a>
                             @endif
@@ -107,7 +107,7 @@
                                     <td class="text-center">
                                         <a href="{{ route('admin.products.edit', $product) }}"
                                             class="btn btn-sm btn-outline-primary mb-1">
-                                            ✏️ Edit
+                                            <i class="bi bi-pencil"></i> Edit
                                         </a>
                                         <form method="POST" action="{{ route('admin.products.destroy', $product) }}"
                                             style="display: inline;"
@@ -115,7 +115,7 @@
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-sm btn-outline-danger">
-                                                🗑️ Hapus
+                                                <i class="bi bi-trash"></i> Hapus
                                             </button>
                                         </form>
                                     </td>
@@ -131,7 +131,7 @@
                             Menampilkan {{ $products->firstItem() }} - {{ $products->lastItem() }} dari
                             {{ $products->total() }} produk
                         </small>
-                        {{ $products->links() }}
+                        {{ $products->links('pagination::bootstrap-5') }}
                     </div>
                 </div>
             </div>
@@ -197,8 +197,8 @@
     @else
         <div class="card border-0 shadow-sm">
             <div class="card-body py-5 text-center">
-                <p class="text-muted mb-3">📭 Belum ada produk yang ditambahkan.</p>
-                <a href="{{ route('admin.products.create') }}" class="btn btn-success">➕ Tambah Produk</a>
+                <p class="text-muted mb-3"><i class="bi bi-box-seam"></i> Belum ada produk yang ditambahkan.</p>
+                <a href="{{ route('admin.products.create') }}" class="btn btn-success"><i class="bi bi-plus-circle"></i> Tambah Produk</a>
             </div>
         </div>
     @endif

@@ -417,7 +417,7 @@
                                 <strong class="text-dark fs-5">Rp
                                     {{ number_format($product->price, 0, ',', '.') }}</strong>
                                 <a href="{{ route('products.show', $product) }}"
-                                    class="btn btn-outline-primary btn-modern">Detail</a>
+                                    class="btn btn-outline-dark btn-modern">Detail</a>
                             </div>
                         </div>
                         <div class="card-footer border-0 bg-transparent p-4 pt-0">

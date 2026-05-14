@@ -91,7 +91,7 @@
                                             </div>
                                             <div class="d-flex flex-column gap-2">
                                                 <a href="{{ route('products.show', $product) }}"
-                                                    class="btn btn-outline-success btn-sm w-100">Lihat Detail</a>
+                                                    class="btn btn-outline-dark btn-sm w-100">Lihat Detail</a>
                                                 <a href="{{ whatsapp_link('Halo, saya ingin memesan produk: ' . $product->name) }}"
                                                     target="_blank" class="btn btn-success btn-sm w-100">
                                                     <i class="bi bi-whatsapp"></i> Pesan
@@ -105,7 +105,7 @@
                     </div>
 
                     <div class="d-flex justify-content-center mt-4">
-                        {{ $products->links() }}
+                        {{ $products->links('pagination::bootstrap-5') }}
                     </div>
                 @else
                     <div class="alert alert-info text-center">

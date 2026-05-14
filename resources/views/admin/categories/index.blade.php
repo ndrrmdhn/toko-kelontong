@@ -9,7 +9,7 @@
         </div>
         <div class="col-md-4 text-md-end">
             <a href="{{ route('admin.categories.create') }}" class="btn btn-primary">
-                <span>➕ Tambah Kategori</span>
+                <span><i class="bi bi-plus-circle"></i> Tambah Kategori</span>
             </a>
         </div>
     </div>
@@ -23,11 +23,11 @@
                         <input type="text" name="search" class="form-control" placeholder="Cari kategori..."
                             value="{{ $search ?? '' }}">
                         <button type="submit" class="btn btn-primary">
-                            🔍 Cari
+                            <i class="bi bi-search"></i> Cari
                         </button>
                         @if ($search)
                             <a href="{{ route('admin.categories.index') }}" class="btn btn-secondary">
-                                ↻ Reset
+                                <i class="bi bi-arrow-clockwise"></i> Reset
                             </a>
                         @endif
                     </form>
@@ -77,7 +77,7 @@
                                         <td class="text-center">
                                             <a href="{{ route('admin.categories.edit', $category) }}"
                                                 class="btn btn-sm btn-outline-primary" title="Edit">
-                                                ✏️ Edit
+                                                <i class="bi bi-pencil"></i> Edit
                                             </a>
                                             <form method="POST" action="{{ route('admin.categories.destroy', $category) }}"
                                                 style="display: inline;"
@@ -85,7 +85,7 @@
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-sm btn-outline-danger" title="Delete">
-                                                    🗑️ Hapus
+                                                    <i class="bi bi-trash"></i> Hapus
                                                 </button>
                                             </form>
                                         </td>
@@ -102,15 +102,15 @@
                                 Menampilkan {{ $categories->firstItem() }} - {{ $categories->lastItem() }}
                                 dari {{ $categories->total() }} kategori
                             </small>
-                            {{ $categories->links() }}
+                            {{ $categories->links('pagination::bootstrap-5') }}
                         </div>
                     </div>
                 @else
                     <div class="card-body">
                         <div class="py-5 text-center">
-                            <p class="text-muted mb-3">📭 Belum ada kategori</p>
+                            <p class="text-muted mb-3"><i class="bi bi-folder2-open"></i> Belum ada kategori</p>
                             <a href="{{ route('admin.categories.create') }}" class="btn btn-primary">
-                                ➕ Buat Kategori Pertama
+                                <i class="bi bi-plus-circle"></i> Buat Kategori Pertama
                             </a>
                         </div>
                     </div>

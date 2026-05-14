@@ -10,7 +10,7 @@
         </div>
         <div class="col-md-4 text-md-end">
             <a href="{{ route('admin.rentals.create') }}" class="btn btn-success">
-                <span>➕ Tambah Kontrakan</span>
+                <span><i class="bi bi-plus-circle"></i> Tambah Kontrakan</span>
             </a>
         </div>
     </div>
@@ -37,9 +37,9 @@
                         </div>
 
                         <div class="col-sm-2 col-lg-3 d-grid gap-2">
-                            <button type="submit" class="btn btn-primary">🔍 Cari</button>
+                            <button type="submit" class="btn btn-primary"><i class="bi bi-search"></i> Cari</button>
                             @if ($search || $status)
-                                <a href="{{ route('admin.rentals.index') }}" class="btn btn-outline-secondary">↻ Reset</a>
+                                <a href="{{ route('admin.rentals.index') }}" class="btn btn-outline-secondary"><i class="bi bi-arrow-clockwise"></i> Reset</a>
                             @endif
                         </div>
                     </form>
@@ -121,7 +121,7 @@
                                     <td class="text-center">
                                         <a href="{{ route('admin.rentals.edit', $rental) }}"
                                             class="btn btn-sm btn-outline-primary mb-1">
-                                            ✏️ Edit
+                                            <i class="bi bi-pencil"></i> Edit
                                         </a>
                                         <form method="POST" action="{{ route('admin.rentals.destroy', $rental) }}"
                                             style="display: inline;"
@@ -129,7 +129,7 @@
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-sm btn-outline-danger">
-                                                🗑️ Hapus
+                                                <i class="bi bi-trash"></i> Hapus
                                             </button>
                                         </form>
                                     </td>
@@ -145,7 +145,7 @@
                             Menampilkan {{ $rentals->firstItem() }} - {{ $rentals->lastItem() }} dari
                             {{ $rentals->total() }} kontrakan
                         </small>
-                        {{ $rentals->links() }}
+                        {{ $rentals->links('pagination::bootstrap-5') }}
                     </div>
                 </div>
             </div>

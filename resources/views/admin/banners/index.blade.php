@@ -10,7 +10,7 @@
         </div>
         <div class="col-md-4 text-md-end">
             <a href="{{ route('admin.banners.create') }}" class="btn btn-success">
-                <span>➕ Tambah Banner</span>
+                <span><i class="bi bi-plus-circle"></i> Tambah Banner</span>
             </a>
         </div>
     </div>
@@ -71,7 +71,7 @@
                                     <td class="text-center">
                                         <a href="{{ route('admin.banners.edit', $banner) }}"
                                             class="btn btn-sm btn-outline-primary mb-1">
-                                            ✏️ Edit
+                                            <i class="bi bi-pencil"></i> Edit
                                         </a>
                                         <form method="POST" action="{{ route('admin.banners.destroy', $banner) }}"
                                             style="display: inline;"
@@ -79,7 +79,7 @@
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-sm btn-outline-danger">
-                                                🗑️ Hapus
+                                                <i class="bi bi-trash"></i> Hapus
                                             </button>
                                         </form>
                                     </td>
@@ -95,7 +95,7 @@
                             Menampilkan {{ $banners->firstItem() }} - {{ $banners->lastItem() }} dari
                             {{ $banners->total() }} banner
                         </small>
-                        {{ $banners->links() }}
+                        {{ $banners->links('pagination::bootstrap-5') }}
                     </div>
                 </div>
             </div>
@@ -159,12 +159,12 @@
         <div class="card border-0 shadow-sm">
             <div class="card-body py-5 text-center">
                 <div class="mb-3">
-                    <span style="font-size: 3rem;">📢</span>
+                    <span style="font-size: 3rem;"><i class="bi bi-image"></i></span>
                 </div>
                 <h5 class="text-muted">Belum ada banner</h5>
                 <p class="text-muted">Tambahkan banner pertama untuk mulai mempromosikan konten Anda.</p>
                 <a href="{{ route('admin.banners.create') }}" class="btn btn-success">
-                    <span>➕ Tambah Banner Pertama</span>
+                    <span><i class="bi bi-plus-circle"></i> Tambah Banner Pertama</span>
                 </a>
             </div>
         </div>

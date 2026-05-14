@@ -93,7 +93,7 @@
         @if ($rentals->hasPages())
             <nav aria-label="Page navigation" class="mt-4">
                 <ul class="pagination justify-content-center">
-                    {{ $rentals->links() }}
+                    {{ $rentals->links('pagination::bootstrap-5') }}
                 </ul>
             </nav>
         @endif
