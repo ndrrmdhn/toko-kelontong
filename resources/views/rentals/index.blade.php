@@ -26,7 +26,7 @@
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-start mb-3">
                                 <h5 class="card-title">{{ $rental->name }}</h5>
-                                <span class="badge bg-{{ $rental->status === 'available' ? 'success' : 'danger' }}">
+                                <span class="badge badge-modern{{ $rental->status === 'available' ? 'bg-success text-white' : 'bg-danger text-white' }}">
                                     {{ $rental->status === 'available' ? 'Tersedia' : 'Terisi' }}
                                 </span>
                             </div>
@@ -38,14 +38,14 @@
                                     @if ($rental->price_monthly)
                                         <div class="mb-2">
                                             <small class="text-muted">Sewa Bulanan:</small>
-                                            <strong class="d-block text-primary">Rp
+                                            <strong class="d-block text-dark">Rp
                                                 {{ number_format($rental->price_monthly, 0, ',', '.') }}</strong>
                                         </div>
                                     @endif
                                     @if ($rental->price_yearly)
                                         <div>
                                             <small class="text-muted">Sewa Tahunan:</small>
-                                            <strong class="d-block text-primary">Rp
+                                            <strong class="d-block text-dark">Rp
                                                 {{ number_format($rental->price_yearly, 0, ',', '.') }}</strong>
                                         </div>
                                     @endif
@@ -74,7 +74,7 @@
                         </div>
                         <div class="card-footer border-top-0 bg-white">
                             <a href="{{ whatsapp_link('Halo, saya ingin menanyakan kontrakan: ' . $rental->name) }}"
-                                target="_blank" class="btn btn-warning btn-sm w-100">
+                                target="_blank" class="btn btn-success btn-sm w-100">
                                 <i class="bi bi-whatsapp"></i> Tanya Info
                             </a>
                         </div>

@@ -26,14 +26,28 @@
 
     <style>
         :root {
-            --primary-color: {{ setting('primary_color', '#28a745') }};
-            --secondary-color: {{ setting('secondary_color', '#ff9800') }};
-            --light-bg: #f8f9fa;
-            --border-color: #e9ecef;
+            --primary-color: #00b140;
+            --primary-dark: #00a838;
+            --primary-light: #d4edda;
+            --secondary-color: #ffcc00;
+            --secondary-dark: #e6b800;
+            --danger-color: #dc3545;
+            --light-bg: #f5f5f5;
+            --white-bg: #ffffff;
+            --border-color: #e8e8e8;
+            --text-dark: #424242;
+            --text-muted: #999999;
         }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+        }
+
+        .navbar {
+            background-color: var(--white-bg);
+            border-bottom: 1px solid var(--border-color);
         }
 
         .navbar-brand {
@@ -48,12 +62,19 @@
         }
 
         .btn-primary:hover {
-            background-color: #218838;
+            background-color: var(--primary-dark);
+            border-color: var(--primary-dark);
         }
 
         .btn-warning {
             background-color: var(--secondary-color);
             border-color: var(--secondary-color);
+            color: var(--text-dark);
+        }
+
+        .btn-warning:hover {
+            background-color: var(--secondary-dark);
+            border-color: var(--secondary-dark);
         }
 
         .nav-social a {
@@ -80,16 +101,18 @@
             align-items: center;
             gap: 0.5rem;
             padding: 0.85rem 1rem;
-            background-color: var(--secondary-color);
-            color: #fff;
+            background-color: var(--primary-color);
+            color: var(--white-bg);
             border-radius: 999px;
-            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 4px 12px rgba(0, 177, 64, 0.25);
             text-decoration: none;
+            transition: all 0.3s ease;
         }
 
         .whatsapp-float:hover {
-            text-decoration: none;
-            opacity: 0.92;
+            background-color: var(--primary-dark);
+            box-shadow: 0 6px 16px rgba(0, 177, 64, 0.35);
+            transform: translateY(-2px);
         }
 
         /* Hero Section Styles */
@@ -121,26 +144,61 @@
         /* Card Consistency */
         .card-modern {
             border: none;
-            border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
             transition: all 0.3s ease;
+            background-color: var(--white-bg);
         }
 
         .card-modern:hover {
             transform: translateY(-4px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
         }
 
         .card-img-modern {
-            border-radius: 16px 16px 0 0;
-            height: 220px;
+            border-radius: 12px 12px 0 0;
+            height: 200px;
             object-fit: cover;
         }
 
         .badge-modern {
-            border-radius: 20px;
+            border-radius: 16px;
             font-weight: 500;
             padding: 0.375rem 0.75rem;
+            background-color: var(--primary-light);
+            color: var(--primary-color);
+        }
+
+        .table {
+            background-color: var(--white-bg);
+            border-collapse: collapse;
+        }
+
+        .table thead th {
+            background-color: var(--light-bg);
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .table tbody tr {
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .table tbody tr:hover {
+            background-color: var(--light-bg);
+        }
+
+        .form-control,
+        .form-select {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+        }
+
+        .form-control:focus,
+        .form-select:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.2rem rgba(0, 177, 64, 0.1);
         }
 
         .btn-modern {
@@ -293,7 +351,7 @@
                     <p class="text-muted">
                         <i class="bi bi-whatsapp"></i>
                         <a href="{{ whatsapp_link('Halo, saya ingin menghubungi layanan ' . setting('site_name', config('app.name'))) }}"
-                            target="_blank" class="text-decoration-none">
+                            target="_blank" class="text-success text-decoration-none">
                             WhatsApp
                         </a>
                     </p>

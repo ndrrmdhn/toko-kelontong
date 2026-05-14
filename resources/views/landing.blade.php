@@ -57,7 +57,7 @@
                                                         <div
                                                             class="d-flex flex-column flex-sm-row justify-content-center gap-3">
                                                             <a href="{{ $heroButtonLink }}"
-                                                                class="btn btn-warning btn-lg fw-semibold px-4 py-3 shadow">
+                                                                class="btn btn-success btn-lg fw-semibold px-4 py-3 shadow">
                                                                 <i class="bi bi-cart-fill me-2"></i> {{ $heroButtonText }}
                                                             </a>
                                                             <a href="#services"
@@ -88,7 +88,7 @@
                                                     <div
                                                         class="d-flex flex-column flex-sm-row justify-content-center gap-3">
                                                         <a href="{{ route('products.index') }}"
-                                                            class="btn btn-warning btn-lg fw-semibold px-4 py-3 shadow">
+                                                            class="btn btn-success btn-lg fw-semibold px-4 py-3 shadow">
                                                             <i class="bi bi-cart-fill me-2"></i> Belanja Sekarang
                                                         </a>
                                                         <a href="#services"
@@ -135,7 +135,7 @@
                                 </p>
                                 <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
                                     <a href="{{ route('products.index') }}"
-                                        class="btn btn-warning btn-lg fw-semibold px-4 py-3 shadow">
+                                        class="btn btn-outline-light btn-lg fw-semibold px-4 py-3 shadow">
                                         <i class="bi bi-cart-fill me-2"></i> Belanja Sekarang
                                     </a>
                                     <a href="#services" class="btn btn-outline-light btn-lg fw-semibold px-4 py-3">
@@ -205,7 +205,7 @@
                     <div class="col-sm-6">
                         <div class="card card-modern h-100">
                             <div class="card-body p-4 text-center">
-                                <i class="bi bi-clock-history fs-2 text-primary mb-3"></i>
+                                <i class="bi bi-clock-history fs-2 text-success mb-3"></i>
                                 <h6 class="fw-semibold mb-2">Jam Operasional</h6>
                                 <p class="text-muted small mb-0">
                                     {{ setting('operational_hours', 'Senin - Jumat: 09:00 - 18:00') }}</p>
@@ -215,7 +215,7 @@
                     <div class="col-sm-6">
                         <div class="card card-modern h-100">
                             <div class="card-body p-4 text-center">
-                                <i class="bi bi-telephone fs-2 text-primary mb-3"></i>
+                                <i class="bi bi-telephone fs-2 text-success mb-3"></i>
                                 <h6 class="fw-semibold mb-2">Kontak</h6>
                                 <p class="text-muted small mb-1">
                                     <i class="bi bi-telephone me-1"></i>{{ setting('phone', '0812-3456-7890') }}
@@ -229,7 +229,7 @@
                     <div class="col-sm-6">
                         <div class="card card-modern h-100">
                             <div class="card-body p-4 text-center">
-                                <i class="bi bi-geo-alt fs-2 text-primary mb-3"></i>
+                                <i class="bi bi-geo-alt fs-2 text-success mb-3"></i>
                                 <h6 class="fw-semibold mb-2">Alamat</h6>
                                 <p class="text-muted small mb-0">{{ setting('address', 'Alamat belum diatur') }}</p>
                             </div>
@@ -238,7 +238,7 @@
                     <div class="col-sm-6">
                         <div class="card card-modern h-100">
                             <div class="card-body p-4 text-center">
-                                <i class="bi bi-share fs-2 text-primary mb-3"></i>
+                                <i class="bi bi-share fs-2 text-success mb-3"></i>
                                 <h6 class="fw-semibold mb-2">Social Media</h6>
                                 <div class="d-flex justify-content-center mt-2 flex-wrap gap-2">
                                     @foreach (['facebook' => 'bi-facebook', 'instagram' => 'bi-instagram', 'youtube' => 'bi-youtube', 'tiktok' => 'bi-tiktok'] as $key => $icon)
@@ -333,7 +333,7 @@
                 <h2 class="fw-bold mb-1">Produk Unggulan</h2>
                 <p class="text-muted mb-0">Produk terbaik pilihan kami untuk kebutuhan harian Anda.</p>
             </div>
-            <a href="{{ route('products.index') }}" class="btn btn-primary align-self-center">Lihat Semua Produk</a>
+            <a href="{{ route('products.index') }}" class="btn btn-success align-self-center">Lihat Semua Produk</a>
         </div>
 
         <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-4">
@@ -352,24 +352,24 @@
                             <h5 class="card-title fw-semibold mb-2">{{ $product->name }}</h5>
                             <div class="d-flex mb-3 flex-wrap gap-2">
                                 <span
-                                    class="badge badge-modern bg-info text-white">{{ optional($product->category)->name ?? 'Umum' }}</span>
+                                    class="badge badge-modern bg-dark text-white">{{ optional($product->category)->name ?? 'Umum' }}</span>
                                 <span
-                                    class="badge badge-modern bg-{{ $product->stock > 0 ? 'success' : 'danger' }} text-white">
+                                    class="badge badge-modern bg-text-white{{ $product->stock > 0 ? 'success' : 'danger' }}">
                                     {{ $product->stock > 0 ? 'Stok: ' . $product->stock : 'Habis' }}
                                 </span>
                             </div>
                             <p class="card-text text-muted small flex-grow-1 mb-3">
                                 {{ Str::limit($product->description, 80) }}</p>
                             <div class="d-flex justify-content-between align-items-center mt-auto">
-                                <strong class="text-primary fs-5">Rp
+                                <strong class="text-dark fs-5">Rp
                                     {{ number_format($product->price, 0, ',', '.') }}</strong>
                                 <a href="{{ route('products.show', $product) }}"
-                                    class="btn btn-outline-primary btn-modern">Detail</a>
+                                    class="btn btn-outline-dark btn-modern">Detail</a>
                             </div>
                         </div>
                         <div class="card-footer border-0 bg-transparent p-4 pt-0">
                             <a href="{{ whatsapp_link('Halo, saya ingin memesan produk: ' . $product->name) }}"
-                                target="_blank" class="btn btn-warning btn-modern w-100">
+                                target="_blank" class="btn btn-success btn-modern w-100">
                                 <i class="bi bi-whatsapp me-2"></i> Pesan
                             </a>
                         </div>
@@ -393,7 +393,7 @@
                 <h2 class="fw-bold mb-1">Produk Terbaru</h2>
                 <p class="text-muted mb-0">Produk terbaru yang baru saja ditambahkan ke katalog.</p>
             </div>
-            <a href="{{ route('products.index') }}" class="btn btn-outline-primary align-self-center">Lihat Semua
+            <a href="{{ route('products.index') }}" class="btn btn-success align-self-center">Lihat Semua
                 Produk</a>
         </div>
 
@@ -414,7 +414,7 @@
                             <p class="card-text text-muted small flex-grow-1 mb-3">
                                 {{ Str::limit($product->description, 80) }}</p>
                             <div class="d-flex justify-content-between align-items-center mt-auto">
-                                <strong class="text-primary fs-5">Rp
+                                <strong class="text-dark fs-5">Rp
                                     {{ number_format($product->price, 0, ',', '.') }}</strong>
                                 <a href="{{ route('products.show', $product) }}"
                                     class="btn btn-outline-primary btn-modern">Detail</a>
@@ -422,7 +422,7 @@
                         </div>
                         <div class="card-footer border-0 bg-transparent p-4 pt-0">
                             <a href="{{ whatsapp_link('Halo, saya ingin memesan produk: ' . $product->name) }}"
-                                target="_blank" class="btn btn-warning btn-modern w-100">
+                                target="_blank" class="btn btn-success btn-modern w-100">
                                 <i class="bi bi-whatsapp me-2"></i> Pesan
                             </a>
                         </div>
@@ -476,14 +476,14 @@
                                         @if ($rental->price_monthly)
                                             <div class="d-flex justify-content-between">
                                                 <small class="text-muted">Bulanan:</small>
-                                                <strong class="text-primary">Rp
+                                                <strong class="text-dark">Rp
                                                     {{ number_format($rental->price_monthly, 0, ',', '.') }}</strong>
                                             </div>
                                         @endif
                                         @if ($rental->price_yearly)
                                             <div class="d-flex justify-content-between">
                                                 <small class="text-muted">Tahunan:</small>
-                                                <strong class="text-primary">Rp
+                                                <strong class="text-dark">Rp
                                                     {{ number_format($rental->price_yearly, 0, ',', '.') }}</strong>
                                             </div>
                                         @endif
@@ -491,7 +491,7 @@
                                 </div>
                                 <div class="card-footer border-0 bg-transparent p-4 pt-0">
                                     <a href="{{ whatsapp_link('Halo, saya tertarik dengan kontrakan ' . $rental->name) }}"
-                                        target="_blank" class="btn btn-warning btn-modern w-100">
+                                        target="_blank" class="btn btn-success btn-modern w-100">
                                         <i class="bi bi-whatsapp me-2"></i> Tanya Info
                                     </a>
                                 </div>
@@ -507,14 +507,14 @@
                     @endforelse
                 </div>
                 <div class="mt-4 text-center">
-                    <a href="{{ route('rentals.index') }}" class="btn btn-primary">Lihat Semua Kontrakan</a>
+                    <a href="{{ route('rentals.index') }}" class="btn btn-success">Lihat Semua Kontrakan</a>
                 </div>
             </div>
         </div>
     @endif
 
     <!-- CTA Section -->
-    <div class="bg-primary py-5 text-white">
+    <div class="bg-success py-5 text-white">
         <div class="container">
             <div class="row justify-content-center text-center">
                 <div class="col-lg-8 col-xl-6">
@@ -524,7 +524,7 @@
                         <strong>{{ setting('site_name', config('app.name')) }}</strong>
                     </p>
                     <a href="{{ whatsapp_link('Halo, saya ingin bertanya tentang layanan ' . setting('site_name', config('app.name'))) }}"
-                        target="_blank" class="btn btn-warning btn-lg fw-semibold px-5 py-3 shadow">
+                        target="_blank" class="btn btn-success btn-lg fw-semibold px-5 py-3 shadow border-white">
                         <i class="bi bi-whatsapp fs-5 me-2"></i> Chat via WhatsApp
                     </a>
                 </div>

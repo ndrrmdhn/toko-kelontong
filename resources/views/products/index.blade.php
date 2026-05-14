@@ -68,11 +68,11 @@
                                     <div class="card-body d-flex flex-column">
                                         <div class="d-flex mb-2 flex-wrap gap-2">
                                             <span
-                                                class="badge bg-info">{{ optional($product->category)->name ?? '-' }}</span>
+                                                class="badge badge-modern bg-dark text-white">{{ optional($product->category)->name ?? '-' }}</span>
                                             @if ($product->stock > 0)
-                                                <span class="badge bg-success">Stok: {{ $product->stock }}</span>
+                                                <span class="badge badge-modern bg-text-white">Stok: {{ $product->stock }}</span>
                                             @else
-                                                <span class="badge bg-danger">Stok Habis</span>
+                                                <span class="badge badge-modern bg-danger text-white">Stok Habis</span>
                                             @endif
                                         </div>
 
@@ -82,18 +82,18 @@
 
                                         <div class="mt-auto">
                                             <div class="d-flex justify-content-between align-items-center mb-3">
-                                                <span class="text-primary fs-5 fw-semibold">Rp
+                                                <span class="text-dark fs-5 fw-bold">Rp
                                                     {{ number_format($product->price, 0, ',', '.') }}</span>
                                                 @if ($product->expired_date)
                                                     <small
-                                                        class="text-danger">{{ $product->expired_date->format('d/m/Y') }}</small>
+                                                        class="text-danger fw-bold">{{ $product->expired_date->format('d/m/Y') }}</small>
                                                 @endif
                                             </div>
                                             <div class="d-flex flex-column gap-2">
                                                 <a href="{{ route('products.show', $product) }}"
-                                                    class="btn btn-outline-primary btn-sm w-100">Lihat Detail</a>
+                                                    class="btn btn-outline-success btn-sm w-100">Lihat Detail</a>
                                                 <a href="{{ whatsapp_link('Halo, saya ingin memesan produk: ' . $product->name) }}"
-                                                    target="_blank" class="btn btn-warning btn-sm w-100">
+                                                    target="_blank" class="btn btn-success btn-sm w-100">
                                                     <i class="bi bi-whatsapp"></i> Pesan
                                                 </a>
                                             </div>

@@ -69,7 +69,7 @@
                             ])
 
                             <div class="d-grid mt-3 gap-2">
-                                <button type="submit" class="btn btn-primary">Simpan Profil</button>
+                                <button type="submit" class="btn btn-success">Simpan Profil</button>
                             </div>
                         </form>
                     </div>

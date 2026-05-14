@@ -26,22 +26,22 @@
 
                 <h1 class="fw-bold">{{ $product->name }}</h1>
                 <div class="d-flex align-items-center mb-3 flex-wrap gap-2">
-                    <span class="badge bg-info">{{ optional($product->category)->name ?? 'Tanpa kategori' }}</span>
+                    <span class="badge badge-modern bg-dark text-white">{{ optional($product->category)->name ?? 'Tanpa kategori' }}</span>
                     @if ($product->active)
-                        <span class="badge bg-success">Aktif</span>
+                        <span class="badge badge-modern bg-success text-white">Aktif</span>
                     @else
-                        <span class="badge bg-secondary">Nonaktif</span>
+                        <span class="badge badge-modern bg-secondary text-white">Nonaktif</span>
                     @endif
                     @if ($product->stock > 0)
-                        <span class="badge bg-primary">Stok: {{ $product->stock }}</span>
+                        <span class="badge badge-modern bg-text-white">Stok: {{ $product->stock }}</span>
                     @else
-                        <span class="badge bg-danger">Stok Habis</span>
+                        <span class="badge badge-modern bg-danger text-white">Stok Habis</span>
                     @endif
                 </div>
                 <div class="mb-4">
-                    <h3 class="text-primary">Rp {{ number_format($product->price, 0, ',', '.') }}</h3>
+                    <h3 class="text-dark fs-5 fw-bold">Rp {{ number_format($product->price, 0, ',', '.') }}</h3>
                     @if ($product->expired_date)
-                        <p class="text-danger mb-0">Kadaluarsa: {{ $product->expired_date->format('d M Y') }}</p>
+                        <p class="text-danger fw-bold mb-0">Kadaluarsa: {{ $product->expired_date->format('d M Y') }}</p>
                     @endif
                 </div>
                 <div class="mb-4">

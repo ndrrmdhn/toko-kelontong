@@ -1,14 +1,15 @@
 <aside class="admin-sidebar">
     <div class="brand">
-        <span>📦</span>
-        <h5>{{ config('app.name') }}</h5>
+        <a href="{{ route('landing') }}" class="text-decoration-none text-dark">
+            <h5>Toko Berkah</h5>
+        </a>
     </div>
 
     <nav class="nav flex-column">
         <div class="nav-label">Menu</div>
 
         <a class="nav-link @if (Route::is('admin.dashboard')) active @endif" href="{{ route('admin.dashboard') }}">
-            <span>📊</span>
+            <span><i class="bi bi-speedometer2"></i></span>
             <span>Dashboard</span>
         </a>
 
@@ -17,25 +18,25 @@
 
             <a class="nav-link @if (Route::is('admin.categories.*')) active @endif"
                 href="{{ route('admin.categories.index') }}">
-                <span>🏷️</span>
+                <span><i class="bi bi-tags-fill"></i></span>
                 <span>Kategori</span>
             </a>
 
             <a class="nav-link @if (Route::is('admin.products.*')) active @endif"
                 href="{{ route('admin.products.index') }}">
-                <span>📦</span>
+                <span><i class="bi bi-box-fill"></i></span>
                 <span>Produk</span>
             </a>
 
             <a class="nav-link @if (Route::is('admin.banners.*')) active @endif"
                 href="{{ route('admin.banners.index') }}">
-                <span>🎨</span>
+                <span><i class="bi bi-palette"></i></span>
                 <span>Banner</span>
             </a>
 
             <a class="nav-link @if (Route::is('admin.services.*')) active @endif"
                 href="{{ route('admin.services.index') }}">
-                <span>⚙️</span>
+                <span><i class="bi bi-star"></i></span>
                 <span>Layanan</span>
             </a>
         @endif
@@ -45,7 +46,7 @@
 
             <a class="nav-link @if (Route::is('admin.rentals.*')) active @endif"
                 href="{{ route('admin.rentals.index') }}">
-                <span>🏠</span>
+                <span><i class="bi bi-house-fill"></i></span>
                 <span>Kontrakan</span>
             </a>
         @endif
@@ -55,7 +56,7 @@
 
             <a class="nav-link @if (Route::is('admin.settings.*')) active @endif"
                 href="{{ route('admin.settings.index') }}">
-                <span>⚡</span>
+                <span><i class="bi bi-gear"></i></span>
                 <span>Pengaturan</span>
             </a>
         @endif

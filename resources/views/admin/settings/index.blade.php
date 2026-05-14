@@ -17,33 +17,33 @@
                     <!-- Nav Tabs -->
                     <ul class="nav nav-tabs nav-fill mb-4" role="tablist">
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link active" id="general-tab" data-bs-toggle="tab" data-bs-target="#general"
+                            <button class="nav-link active text-success" id="general-tab" data-bs-toggle="tab" data-bs-target="#general"
                                 type="button" role="tab" aria-controls="general" aria-selected="true">
-                                ⚙️ Umum
+                                <i class="bi bi-gear"></i> Umum
                             </button>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact"
+                            <button class="nav-link text-success" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact"
                                 type="button" role="tab" aria-controls="contact" aria-selected="false">
-                                📱 Kontak
+                                <i class="bi bi-telephone"></i> Kontak
                             </button>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="social-tab" data-bs-toggle="tab" data-bs-target="#social"
+                            <button class="nav-link text-success" id="social-tab" data-bs-toggle="tab" data-bs-target="#social"
                                 type="button" role="tab" aria-controls="social" aria-selected="false">
-                                📱 Media Sosial
+                                <i class="bi bi-share"></i> Media Sosial
                             </button>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="branding-tab" data-bs-toggle="tab" data-bs-target="#branding"
+                            <button class="nav-link text-success" id="branding-tab" data-bs-toggle="tab" data-bs-target="#branding"
                                 type="button" role="tab" aria-controls="branding" aria-selected="false">
-                                🎨 Branding
+                                <i class="bi bi-palette"></i> Branding
                             </button>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="operational-tab" data-bs-toggle="tab" data-bs-target="#operational"
+                            <button class="nav-link text-success" id="operational-tab" data-bs-toggle="tab" data-bs-target="#operational"
                                 type="button" role="tab" aria-controls="operational" aria-selected="false">
-                                🕐 Operasional
+                                <i class="bi bi-clock"></i> Operasional
                             </button>
                         </li>
                     </ul>
@@ -269,7 +269,7 @@
                         <hr class="my-4">
 
                         <div class="d-grid d-md-flex justify-content-md-end gap-2">
-                            <button type="submit" class="btn btn-primary">💾 Simpan Pengaturan</button>
+                            <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Simpan Pengaturan</button>
                         </div>
                     </form>
                 </div>

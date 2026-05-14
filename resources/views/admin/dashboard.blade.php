@@ -20,7 +20,7 @@
                             <h3 class="fw-bold text-primary">{{ $total_products }}</h3>
                         </div>
                         <div class="stat-icon bg-primary bg-opacity-10">
-                            📦
+                            <i class="bi bi-box-fill"></i>
                         </div>
                     </div>
                 </div>
@@ -36,7 +36,7 @@
                             <h3 class="fw-bold text-success">{{ $total_categories }}</h3>
                         </div>
                         <div class="stat-icon bg-success bg-opacity-10">
-                            🏷️
+                            <i class="bi bi-tags-fill"></i>
                         </div>
                     </div>
                 </div>
@@ -52,7 +52,7 @@
                             <h3 class="fw-bold text-warning">{{ $total_rentals }}</h3>
                         </div>
                         <div class="stat-icon bg-warning bg-opacity-10">
-                            🏠
+                            <i class="bi bi-house-fill"></i>
                         </div>
                     </div>
                 </div>
@@ -68,7 +68,7 @@
                             <h3 class="fw-bold text-info">{{ $available_rentals }}</h3>
                         </div>
                         <div class="stat-icon bg-info bg-opacity-10">
-                            ✓
+                            <i class="bi bi-check-circle-fill"></i>
                         </div>
                     </div>
                 </div>
@@ -81,28 +81,28 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header bg-light fw-bold">
-                    ⚡ Aksi Cepat
+                    <i class="bi bi-three-dots"></i> Aksi Cepat
                 </div>
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-6 col-lg-3 mb-2">
                             <a href="{{ route('admin.categories.create') }}" class="btn btn-outline-primary w-100">
-                                <span>➕ Tambah Kategori</span>
+                                <span><i class="bi bi-plus-circle"></i> Tambah Kategori</span>
                             </a>
                         </div>
                         <div class="col-md-6 col-lg-3 mb-2">
                             <a href="{{ route('admin.products.create') }}" class="btn btn-outline-success w-100">
-                                <span>➕ Tambah Produk</span>
+                                <span><i class="bi bi-plus-circle"></i> Tambah Produk</span>
                             </a>
                         </div>
                         <div class="col-md-6 col-lg-3 mb-2">
                             <a href="{{ route('admin.rentals.create') }}" class="btn btn-outline-warning w-100">
-                                <span>➕ Tambah Kontrakan</span>
+                                <span><i class="bi bi-plus-circle"></i> Tambah Kontrakan</span>
                             </a>
                         </div>
                         <div class="col-md-6 col-lg-3 mb-2">
                             <a href="{{ route('admin.banners.create') }}" class="btn btn-outline-info w-100">
-                                <span>➕ Tambah Banner</span>
+                                <span><i class="bi bi-plus-circle"></i> Tambah Banner</span>
                             </a>
                         </div>
                     </div>
@@ -114,9 +114,9 @@
     <!-- Welcome Message -->
     <div class="row">
         <div class="col-12">
-            <div class="card bg-primary text-white">
+            <div class="card bg-success text-white">
                 <div class="card-body">
-                    <h5 class="card-title">👋 Selamat Datang, {{ auth()->user()->name }}!</h5>
+                    <h5 class="card-title"><i class="bi bi-emoji-smile"></i> Selamat Datang, {{ auth()->user()->name }}!</h5>
                     <p class="card-text mb-0">
                         Anda login sebagai <strong>{{ ucfirst(str_replace('_', ' ', auth()->user()->role)) }}</strong>.
                         Kelola website {{ config('app.name') }} dengan mudah dan efisien.
